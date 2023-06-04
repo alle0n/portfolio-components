@@ -6,69 +6,45 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface HackernewsJobs {
+    interface CurrencyReport {
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface HackernewsJobs {
     }
 }
 declare global {
+    interface HTMLCurrencyReportElement extends Components.CurrencyReport, HTMLStencilElement {
+    }
+    var HTMLCurrencyReportElement: {
+        prototype: HTMLCurrencyReportElement;
+        new (): HTMLCurrencyReportElement;
+    };
     interface HTMLHackernewsJobsElement extends Components.HackernewsJobs, HTMLStencilElement {
     }
     var HTMLHackernewsJobsElement: {
         prototype: HTMLHackernewsJobsElement;
         new (): HTMLHackernewsJobsElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
+        "currency-report": HTMLCurrencyReportElement;
         "hackernews-jobs": HTMLHackernewsJobsElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CurrencyReport {
+    }
     interface HackernewsJobs {
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
+        "currency-report": CurrencyReport;
         "hackernews-jobs": HackernewsJobs;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "currency-report": LocalJSX.CurrencyReport & JSXBase.HTMLAttributes<HTMLCurrencyReportElement>;
             "hackernews-jobs": LocalJSX.HackernewsJobs & JSXBase.HTMLAttributes<HTMLHackernewsJobsElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }
